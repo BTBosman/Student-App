@@ -1,0 +1,44 @@
+<!--
+  Generated template for the StudentsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <!-- <ion-navbar>
+    <ion-title>Students</ion-title>
+  </ion-navbar> -->
+
+</ion-header>
+
+
+<ion-content padding>
+<div class="inputs">
+  <ion-item class="inputs2">
+    <ion-label><i class="fa fa-user" style="font-size:15px;">First Name </i></ion-label>
+    <ion-input type="text" placeholder="First Name" #firstName ></ion-input>
+   </ion-item>
+   <br>
+   <ion-item class="inputs2">
+    <ion-label><i class="fa fa-user" style="font-size:15px;">Last Name </i></ion-label>
+    <ion-input type="text" placeholder="Last Name" #lastName ></ion-input>
+   </ion-item>
+   <br>
+   <ion-item class="inputs2">
+    <ion-label><i class="fa fa-lock" style="font-size:15px;">Student Number </i></ion-label>
+    <ion-input type="text" placeholder="Student Number" #stdNumber ></ion-input>
+   </ion-item>
+      </div>
+  <br>
+  <ion-icon color="light" name="add-circle" class="icon" (click)="SaveData(firstName.value,lastName.value,stdNumber.value)">Add Student!</ion-icon>
+  <br>
+  <ion-card class="card" *ngFor="let emp of arr,let i = index">
+    <b>Name </b> {{emp.firstName}}<br>
+    <b>Last Name </b> {{emp.lastName}}<br>
+    <b>Student Number </b> {{emp.stdNumber}}
+    <!-- <img class="updateIcon" (click)="update(i,firstName.value,lastName.value,stdNumber.value)" src="../../assets/imgs/update4.png"> -->
+    <ion-icon class="updIcon" (click)="remove(i)" ios="ios-trash" md="md-trash"></ion-icon>
+    <ion-icon class="updIcon" (click)="update(i,firstName.value,lastName.value,stdNumber.value)" ios="ios-sync" md="md-sync"></ion-icon>
+    </ion-card>
+  </ion-content>
